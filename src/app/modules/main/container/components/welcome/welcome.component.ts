@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 
 @Component({
   selector: "welcome",
@@ -6,7 +6,23 @@ import { Component, OnInit, Output } from "@angular/core";
   styleUrls: ["./welcome.component.css"]
 })
 export class WelcomeComponent implements OnInit {
+  name: string;
+  visible = false;
+  buttonValue: string;
+
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.buttonValue = "Show message";
+  }
+
+  toggleChild() {
+    this.visible = !this.visible;
+    if (this.visible) {
+      this.buttonValue = "Retry";
+    } else {
+      this.buttonValue = "Show Message";
+      this.name = "";
+    }
+  }
 }

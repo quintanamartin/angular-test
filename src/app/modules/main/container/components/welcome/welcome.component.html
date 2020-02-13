@@ -1,19 +1,23 @@
 <div class="row">
   <div class="col-8">
-    <form>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Enter your name:</label>
-        <input type="text" class="input" />
-      </div>
+    <div form="form-group">
+      <label for="exampleInputEmail1">Enter your name:</label>
+      <input
+        type="text"
+        class="input"
+        [(ngModel)]="name"
+        [disabled]="visible"
+        required
+      />
+    </div>
 
-      <button class="btn btn-primary">
-        Show message
-      </button>
-    </form>
+    <button class="btn btn-primary" (click)="toggleChild()" [disabled]="!name">
+      {{ buttonValue }}
+    </button>
   </div>
 </div>
 <div class="row">
   <div class="col-8">
-    <welcome-card></welcome-card>
+    <welcome-card [name]="name" *ngIf="visible"></welcome-card>
   </div>
 </div>
