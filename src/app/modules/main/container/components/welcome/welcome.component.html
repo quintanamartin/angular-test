@@ -1,18 +1,16 @@
-<div class="row mt-3">
-  <div class="col-8">
-    <div form="form-group">
-      <label class="mr-3">Enter your name:</label>
-      <input
-        type="text"
-        class="input"
-        [(ngModel)]="name"
-        [disabled]="visible"
-        required
-      />
-    </div>
-
+<div class="row mt-3 ">
+  <div class="col-8 ">
+    <input
+      type="text"
+      class="form-control w-50"
+      [(ngModel)]="name"
+      [disabled]="visible"
+      placeholder="Enter your name here"
+      required
+      (keyup.enter)="toggleChild()"
+    />
     <button
-      class="btn btn-primary mt-3"
+      class="btn btn-dark mt-3"
       (click)="toggleChild()"
       [disabled]="!name"
     >
