@@ -11,6 +11,7 @@ import { WelcomeComponent } from "./modules/main/container/components/welcome/we
 import { TableComponent } from "./modules/main/container/components/table/table.component";
 import { ApiSearchComponent } from "./modules/main/container/components/api-search/api-search.component";
 import { WelcomeCardComponent } from "./modules/main/container/components/welcome/welcome-card/welcome-card.component";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { WelcomeCardComponent } from "./modules/main/container/components/welcom
     ApiSearchComponent,
     WelcomeCardComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
 })

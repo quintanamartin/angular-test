@@ -1,7 +1,7 @@
-<div class="row">
+<div class="row mt-3">
   <div class="col-8">
     <div form="form-group">
-      <label for="exampleInputEmail1">Enter your name:</label>
+      <label class="mr-3">Enter your name:</label>
       <input
         type="text"
         class="input"
@@ -11,12 +11,16 @@
       />
     </div>
 
-    <button class="btn btn-primary" (click)="toggleChild()" [disabled]="!name">
+    <button
+      class="btn btn-primary mt-3"
+      (click)="toggleChild()"
+      [disabled]="!name"
+    >
       {{ buttonValue }}
     </button>
   </div>
 </div>
-<div class="row">
+<div class="row mt-3">
   <div class="col-8">
     <welcome-card [name]="name" *ngIf="visible"></welcome-card>
   </div>
