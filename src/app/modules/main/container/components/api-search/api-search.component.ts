@@ -10,6 +10,7 @@ export class ApiSearchComponent {
   name: string;
   character: any[] = [];
   loading: boolean;
+  noData: boolean = false;
   constructor(private searchService: ApiSearchService) {}
   ngOnInit(): void {}
 
@@ -17,9 +18,12 @@ export class ApiSearchComponent {
     this.loading = true;
     const userName = this.name;
     this.searchService.getCharacter(userName).subscribe((data: any) => {
-      console.log(data);
       this.character = data;
       this.loading = false;
+      this.noData = false;
+      if (!data) {
+        this.noData = true;
+      }
     });
   }
 }
