@@ -12,7 +12,6 @@ import { TableComponent } from "./modules/main/container/components/table/table.
 import { ApiSearchComponent } from "./modules/main/container/components/api-search/api-search.component";
 import { WelcomeCardComponent } from "./modules/main/container/components/welcome/welcome-card/welcome-card.component";
 import { HttpClientModule } from "@angular/common/http";
-import { ButtonComponent } from './shared/button/button.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +23,7 @@ import { ButtonComponent } from './shared/button/button.component';
     WelcomeComponent,
     TableComponent,
     ApiSearchComponent,
-    WelcomeCardComponent,
-    ButtonComponent
+    WelcomeCardComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
